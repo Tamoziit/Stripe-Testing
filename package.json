@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "Tamojit Das",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "stripe": "^17.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
