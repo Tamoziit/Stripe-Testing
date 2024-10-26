@@ -1,23 +1,23 @@
 [
     {
-        "id": "cs_test_b1vEyL47qLoWheleQcRm14IiZej87wkLjfo8DTZT5xKQWqE0H4PHGNOJjl",
+        "id": "cs_test_b1FSjq0t5X40ebjCmv6Me3xh0b4nAXsWBLGF5bttKVZP6qIssH1Hm3AhZc",
         "object": "checkout.session",
         "after_expiration": null,
-        "allow_promotion_codes": null,
+        "allow_promotion_codes": true,
         "amount_subtotal": 9000,
-        "amount_total": 9000,
+        "amount_total": 14000,
         "automatic_tax": {
             "enabled": false,
             "liability": null,
             "status": null
         },
-        "billing_address_collection": null,
-        "cancel_url": "http://localhost:3000/cancel",
+        "billing_address_collection": "required",
+        "cancel_url": "http://localhost:3000/cancel?reason=user_cancelled",
         "client_reference_id": null,
         "client_secret": null,
         "consent": null,
         "consent_collection": null,
-        "created": 1729686402,
+        "created": 1729874187,
         "currency": "inr",
         "currency_conversion": null,
         "custom_fields": [],
@@ -38,14 +38,14 @@
                 "postal_code": "700074",
                 "state": "WB"
             },
-            "email": "faangunited@gmail.com",
+            "email": "customer@example.com",
             "name": "Tamojit Das",
             "phone": null,
             "tax_exempt": "none",
             "tax_ids": []
         },
-        "customer_email": null,
-        "expires_at": 1729772802,
+        "customer_email": "customer@example.com",
+        "expires_at": 1729960587,
         "invoice": null,
         "invoice_creation": {
             "enabled": false,
@@ -61,38 +61,41 @@
         },
         "livemode": false,
         "locale": null,
-        "metadata": {},
+        "metadata": {
+            "customerNote": "Please deliver between 10 AM to 5 PM",
+            "orderId": "12345"
+        },
         "mode": "payment",
         "payment_intent": {
-            "id": "pi_3QD3epA4DtengA8w1pI6fgjA",
+            "id": "pi_3QDqWIA4DtengA8w0vt1kAYB",
             "object": "payment_intent",
-            "amount": 9000,
+            "amount": 14000,
             "amount_capturable": 0,
             "amount_details": {
                 "tip": {}
             },
-            "amount_received": 9000,
+            "amount_received": 14000,
             "application": null,
             "application_fee_amount": null,
             "automatic_payment_methods": null,
             "canceled_at": null,
             "cancellation_reason": null,
             "capture_method": "automatic_async",
-            "client_secret": "pi_3QD3epA4DtengA8w1pI6fgjA_secret_Zu78KMnjd5FYH1g88j8JGDaze",
+            "client_secret": "pi_3QDqWIA4DtengA8w0vt1kAYB_secret_J9vUo677Y0uwKwBbcetfxVRq6",
             "confirmation_method": "automatic",
-            "created": 1729686443,
+            "created": 1729874270,
             "currency": "inr",
             "customer": null,
             "description": null,
             "invoice": null,
             "last_payment_error": null,
-            "latest_charge": "ch_3QD3epA4DtengA8w1u8S0fC4",
+            "latest_charge": "ch_3QDqWIA4DtengA8w08gedfnl",
             "livemode": false,
             "metadata": {},
             "next_action": null,
             "on_behalf_of": null,
             "payment_method": {
-                "id": "pm_1QD3enA4DtengA8wDtSQvySQ",
+                "id": "pm_1QDqWGA4DtengA8w1gIesyzF",
                 "object": "payment_method",
                 "allow_redisplay": "limited",
                 "billing_details": {
@@ -104,7 +107,7 @@
                         "postal_code": "700074",
                         "state": "WB"
                     },
-                    "email": "faangunited@gmail.com",
+                    "email": "customer@example.com",
                     "name": "Tamojit Das",
                     "phone": null
                 },
@@ -117,8 +120,8 @@
                     },
                     "country": "US",
                     "display_brand": "visa",
-                    "exp_month": 7,
-                    "exp_year": 2025,
+                    "exp_month": 6,
+                    "exp_year": 2027,
                     "fingerprint": "6Z1ciqYFdUEhR9yf",
                     "funding": "credit",
                     "generated_from": null,
@@ -134,7 +137,7 @@
                     },
                     "wallet": null
                 },
-                "created": 1729686441,
+                "created": 1729874268,
                 "customer": null,
                 "livemode": false,
                 "metadata": {},
@@ -200,7 +203,12 @@
                 "IN"
             ]
         },
-        "shipping_cost": null,
+        "shipping_cost": {
+            "amount_subtotal": 5000,
+            "amount_tax": 0,
+            "amount_total": 5000,
+            "shipping_rate": "shr_1QDqUwA4DtengA8we6iC5gyP"
+        },
         "shipping_details": {
             "address": {
                 "city": "Kolkata",
@@ -212,14 +220,19 @@
             },
             "name": "Tamojit Das"
         },
-        "shipping_options": [],
+        "shipping_options": [
+            {
+                "shipping_amount": 5000,
+                "shipping_rate": "shr_1QDqUwA4DtengA8we6iC5gyP"
+            }
+        ],
         "status": "complete",
         "submit_type": null,
         "subscription": null,
-        "success_url": "http://localhost:3000/complete?session_id={CHECKOUT_SESSION_ID}",
+        "success_url": "http://localhost:3000/complete?session_id={CHECKOUT_SESSION_ID}&order_id=12345",
         "total_details": {
             "amount_discount": 0,
-            "amount_shipping": 0,
+            "amount_shipping": 5000,
             "amount_tax": 0
         },
         "ui_mode": "hosted",
@@ -229,7 +242,7 @@
         "object": "list",
         "data": [
             {
-                "id": "li_1QD3eAA4DtengA8wrzsylAyI",
+                "id": "li_1QDqUxA4DtengA8w9OE2KHOv",
                 "object": "item",
                 "amount_discount": 0,
                 "amount_subtotal": 5000,
@@ -238,18 +251,18 @@
                 "currency": "inr",
                 "description": "Tubri",
                 "price": {
-                    "id": "price_1QD3eAA4DtengA8wNEZjj1qI",
+                    "id": "price_1QDqUwA4DtengA8wB8M8NSnl",
                     "object": "price",
                     "active": false,
                     "billing_scheme": "per_unit",
-                    "created": 1729686402,
+                    "created": 1729874186,
                     "currency": "inr",
                     "custom_unit_amount": null,
                     "livemode": false,
                     "lookup_key": null,
                     "metadata": {},
                     "nickname": null,
-                    "product": "prod_R5DRe34jFD33vJ",
+                    "product": "prod_R62as6TB8BgCDy",
                     "recurring": null,
                     "tax_behavior": "unspecified",
                     "tiers_mode": null,
@@ -261,7 +274,7 @@
                 "quantity": 1
             },
             {
-                "id": "li_1QD3eAA4DtengA8wMj1bZt4I",
+                "id": "li_1QDqUxA4DtengA8wxlcohQSw",
                 "object": "item",
                 "amount_discount": 0,
                 "amount_subtotal": 4000,
@@ -270,18 +283,18 @@
                 "currency": "inr",
                 "description": "Tara baji",
                 "price": {
-                    "id": "price_1QD3eAA4DtengA8wfOykMseF",
+                    "id": "price_1QDqUxA4DtengA8wpkObAU2p",
                     "object": "price",
                     "active": false,
                     "billing_scheme": "per_unit",
-                    "created": 1729686402,
+                    "created": 1729874187,
                     "currency": "inr",
                     "custom_unit_amount": null,
                     "livemode": false,
                     "lookup_key": null,
                     "metadata": {},
                     "nickname": null,
-                    "product": "prod_R5DiUufK18BfH6",
+                    "product": "prod_R62asf7iXWkF8x",
                     "recurring": null,
                     "tax_behavior": "unspecified",
                     "tiers_mode": null,
@@ -294,6 +307,6 @@
             }
         ],
         "has_more": false,
-        "url": "/v1/checkout/sessions/cs_test_b1vEyL47qLoWheleQcRm14IiZej87wkLjfo8DTZT5xKQWqE0H4PHGNOJjl/line_items"
+        "url": "/v1/checkout/sessions/cs_test_b1FSjq0t5X40ebjCmv6Me3xh0b4nAXsWBLGF5bttKVZP6qIssH1Hm3AhZc/line_items"
     }
 ]
